@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  /* dark default text color so UI components (like antd notifications) are readable */
+  color: #111827;
+  background-color: #fafafa;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Underline animated utility
+   Usage: add `animated-underline` to a link. To add a delay, also add
+   `animated-underline--delay` which applies a small transition delay.
+*/
+.animated-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  height: 1px;
+  width: 100%;
+  background-color: currentColor;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 220ms cubic-bezier(.2, .9, .2, 1);
+}
+
+.animated-underline:hover::after,
+.animated-underline:focus::after {
+  transform: scaleX(1);
+}
+
+.animated-underline--delay::after {
+  transition-delay: 120ms;
+}
