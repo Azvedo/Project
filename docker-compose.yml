@@ -1,0 +1,35 @@
+
+services:
+  backend:
+    build:
+      context: ./Course-Sphere-api
+      dockerfile: Dockerfile
+    image: coursesphere-backend:latest
+    container_name: coursesphere-backend
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      # FRONTEND_URL used by CORS policy in Program.cs
+      - FRONTEND_URL=http://localhost:8080
+    ports:
+      - "5000:80"
+    networks:
+      - cs-net
+
+  frontend:
+    build:
+      context: ./Course-Sphere
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: http://backend:80
+    image: coursesphere-frontend:latest
+    container_name: coursesphere-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - cs-net
+
+networks:
+  cs-net:
+    driver: bridge

@@ -1,0 +1,38 @@
+# Root repository gitignore: general OS/editor/CI artifacts and common secrets
+
+# Node / JS
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Logs
+*.log
+logs/
+
+# Env / secrets
+.env
+.env.*
+
+# Docker
+**/docker-compose.override.yml
+*.env.test
+
+# IDEs
+.vscode/
+!.vscode/extensions.json
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary
+*.tmp
+*.temp
+
+# Optional: build artifacts (some projects manage their own .gitignore)
+dist/
+build/

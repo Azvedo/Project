@@ -1,0 +1,45 @@
+## Visual Studio / .NET Core
+## Ignore build outputs
+bin/
+obj/
+**/bin/
+**/obj/
+
+## Publish output
+publish/
+artifacts/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.userprefs
+*.csproj.user
+
+## Visual Studio workspace
+.vs/
+
+## NuGet
+*.nupkg
+packages/
+
+## Logs and databases
+*.log
+*.sqlite
+*.db
+
+## Rider/IDE
+.idea/
+
+## OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+## Secrets / local settings
+appsettings.*.Local.json
+secrets.json
+
+## Generated files
+*.dbmdl
+*.bak
